@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +9,7 @@
 <body class="d-flex justify-content-center align-items-center vh-100">
     
     <div class="container text-center">
-        <section id="inicial-page" class="mx-auto col-12 col-md-4 ">
+        <section id="inicial-page" class="mx-auto col-12 col-md-4">
             <h1>O Cofre</h1>
             <p>Desbloqueie o cofre se for capaz...</p>
             <button class="btn btn-primary w-100" onclick="iniciarDesafio()">Desvendar</button>
@@ -39,10 +39,69 @@
             <p></p>
             
             <hr>
-            <h1 id="resposta" class="d-none"></h1>
+            <h1 id="resposta" class="d-none"></h1> 
             <button class="btn btn-primary" onclick="sendResponseFirstQuestion()">Enviar Resposta</button>
+        </section>
 
+        <section id="second-challenge" class="mx-auto col-12 col-md-4 d-none">
+            <h1 class="text-primary">Medio</h1>
+            <p>Qual empresa criou o sistema operacional 
+                <strong>
+                    android
+                </strong>
+            </p>
 
+            <hr>
+
+            <label for="company">Microsoft</label>
+            <input type="radio" name="company" value="Microsoft">
+            |
+            <label for="company">IBM</label>
+            <input type="radio" name="company" value="IBM">
+            |
+            <label for="company">Apple</label>
+            <input type="radio" name="company" value="Apple">
+            |
+            <label for="company">Google</label>
+            <input type="radio" name="company" value="Google">
+            |
+            <label for="company">Nokia</label>
+            <input type="radio" name="company" value="Nokia">
+            
+            <hr>
+
+            <h1 id="resposta-second-question" class="d-none"></h1> 
+            <button class="btn btn-primary" onclick="sendResponseSecondQuestion()">Clique aqui!</button>
+        </section>
+        <section id="third-challenge" class="mx-auto col-12 col-md-4 d-none">
+            <h1 class="text-primary">
+                Difícil
+            </h1>
+            <p>Qual o nome da <strong>primeira linguagem de programação</strong> de alto nível, que foi usada em computadores modernos:</p>
+            <input type="text" placeholder="Digite..." name="user-response" id="first-programming-language-response">
+            <hr>  
+            <h1 id="response-third-question" class="d-none"></h1>
+            <button class="btn btn-primary" onclick="sendResponseThirdQuestion()">Enviar resposta!</button>
+        </section>
+        <section id="last-response" class="mx-auto col-12 col-md-4 d-none">
+            <h1 class="text-primary">
+                Abra o Cofre
+            </h1>
+            <p>
+                Insira a sequencia correta de números! <br>Caso contrario, <strong>o jogo recomeça</strong>...
+            </p>
+            <hr>
+            <div class="d-flex justify-content-center gap-3">
+                <input type="number" class="form-control text-primary" id="first-response">
+                <input type="number" class="form-control text-primary" id="second-response">
+                <input type="number" class="form-control text-primary" id="third-response">
+            </div>
+            <hr>
+            <button class="btn btn-primary" onclick="checkPassword()">Destrave o Cofre!</button>
+        </section>
+        <section id="final" class="mx-auto col-12 col-md-4 d-none">
+            <h1 class="text-primary">Parabéns!</h1>
+            <p>Você conseguiu <strong>ganhar</strong> o jogo!</p>
         </section>
     </div>
 <script src="index.js"></script>
