@@ -27,9 +27,10 @@ async function sendResponseFirstQuestion(){
 
     let correctResponse = 0;
 
-    console.log(checkedBoxes);
     for(i = 0; i < checkedBoxes.length; i++){
-
+        if((checkedBoxes[i].value == 'bash') || (checkedBoxes[i].value == 'java')){
+            correctResponse = -3;
+        }
         if((checkedBoxes[i].value == 'html') || (checkedBoxes[i].value == 'css') || (checkedBoxes[i].value == 'sql')) {
             correctResponse++;
         }
@@ -76,8 +77,8 @@ async function sendResponseSecondQuestion(){
 
 function sendResponseThirdQuestion(){
     const response = document.getElementById('first-programming-language-response').value.toUpperCase();
-
-    if(response == 'FORTRAN'){
+    
+    if(response == 'FORTRAN'){ 
         window.alert("Resposta Correta!");
         document.getElementById('response-third-question').classList.remove('d-none');
         document.getElementById('response-third-question').innerHTML = `${arrSenhaCofre[2]}`;
@@ -103,7 +104,8 @@ function checkPassword(){
             document.getElementById('final').classList.remove('d-none');
         }, 1500);
     }else{
-        console.log(arrSenhaCofre);
+        window.alert("Resposta incorreta! Voltando ao inicio!!!")
+        location.reload(true);
     }
 } 
 
